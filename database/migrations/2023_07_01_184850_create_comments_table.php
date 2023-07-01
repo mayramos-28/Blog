@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('commentable_id');
             $table->string('commentable_type');
-            $table->string('comment');            
+            $table->text('comment');            
             $table->timestamps();
         });
     }
