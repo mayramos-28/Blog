@@ -21,9 +21,9 @@ class PostFactory extends Factory
         return [
             'slug' => fake()->unique()->slug(),
             'title' => fake()->sentence(),
-            'description' => fake()->paragraph(),
+            'content' => fake()->paragraph(),
             'category_id' => fake()->numberBetween(1, 10),
-            'is_published' => fake()->boolean(),
+            'is_published' => true,
             'user_id' => fake()->numberBetween(1, 10),
         ];
     }
