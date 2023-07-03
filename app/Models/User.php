@@ -41,6 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable');
@@ -53,4 +57,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Post::class, 'favorites', 'user_id', 'post_id')->withTimestamps();
     }
+    public function files()
+    {
+        return $this->morphMany(File::class, 'fileable');
+    }
+
 }
