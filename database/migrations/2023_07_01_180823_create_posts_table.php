@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique()->nullable(false);
-            $table->string('title');
-            $table->text('description');            
+            $table->string('title')->nullable(false);
+            $table->text('content')->nullable(false);;            
             $table->unsignedBigInteger('category_id')->nullable(false);
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->boolean('is_published')->default(false);
             $table->unsignedBigInteger('user_id')->nullable(false);
             $table->foreign('user_id')->references('id')->on('users');

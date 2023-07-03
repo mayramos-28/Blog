@@ -13,10 +13,19 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();        
-            $table->binary('data');
+            $table->string('filename')->nullable(false);           
+            $table->string('fileable_type')->nullable(false);
+            $table->unsignedBigInteger('fileable_id')->nullable(false);
+            $table->enum(         
+                'type',            
+                ['image', 'video', 'audio', 'document', 'other']        
+            )->nullable(false);
+            $table->enum(         
+                'owner_type',            
+                ['post', 'user', 'profile', 'web', 'other']                    
+            )->nullable(false);
             $table->timestamps();
-            $table->unsignedBigInteger('post_id')->nullable(false);
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            
         });
     }
 
@@ -25,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('files');
     }
 };
