@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse  w-100" id="navbarNav">
       <ul class="navbar-nav nav-font">
         <li class="nav-item item-hoover">
-          <a class="nav-link " aria-current="page" href="#">Posts</a>
+          <a class="nav-link " aria-current="page" href="{{route('posts.index')}}">Posts</a>
         </li>
         <li class="nav-item item-hoover">
-          <a class="nav-link" href="#">Publicar</a>
+          <a class="nav-link" href="{{route('posts.getCreate')}}">Publicar</a>
         </li>
         <li class="nav-item item-hoover">
           <a class="nav-link " href="#">Contact</a>
