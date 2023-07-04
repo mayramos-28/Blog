@@ -19,8 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->nullable(false);
             $table->foreign('category_id')->references('id')->on('categories');
             $table->boolean('is_published')->default(false);
-            $table->unsignedBigInteger('user_id')->nullable(false);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('image')->nullable(true);
+            $table->string('author_name')->nullable(false);
+          
             $table->timestamps();
         });
     }
