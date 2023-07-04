@@ -18,7 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'commentable_id' => fake()->numberBetween(1, 10),
-            'commentable_type' => fake()->randomElement(['App\Models\Comment', 'App\Models\Post', 'App\Models\User']),
+            'commentable_type' => fake()->randomElement(['App\Models\Comment', 'App\Models\Post']),
             'comment' => fake()->text(200),
         ];
     }

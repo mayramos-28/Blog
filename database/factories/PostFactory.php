@@ -16,15 +16,17 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-      
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider($faker));
 
         return [
             'slug' => fake()->unique()->slug(),
             'title' => fake()->sentence(),
-            'content' => fake()->paragraph(),
-            'category_id' => fake()->numberBetween(1, 10),
+            'content' => implode("\n\n", fake()->paragraphs(4)),
+            'category_id' => fake()->numberBetween(1, 5),
             'is_published' => true,
-            'user_id' => fake()->numberBetween(1, 10),
+            'image' => $faker->imageUrl(640, 480),
+            'author_name' => $faker->randomElement(['John Doe', 'Jane Smith', 'Roberta Johnson']),
         ];
     }
 }
