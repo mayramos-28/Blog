@@ -29,4 +29,5 @@ class PostFactory extends Factory
             'author_name' => $faker->randomElement(['John Doe', 'Jane Smith', 'Roberta Johnson']),
         ];
     }
+    
 }
