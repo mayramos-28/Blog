@@ -1,7 +1,7 @@
 <?php
 $post ??= null;
 ?>
-<form action="{{ route($route, ['id'=> $post->id ?? ''])}}" method="POST" enctype="multipart/form-data">
+<form action="{{ route($route, ['id'=> $post->id ?? ''])}}" method="POST" enctype="multipart/form-data" class="fs-5">
     @csrf
    <legend class="py-2">{{$title}}</legend>
    
@@ -33,5 +33,5 @@ $post ??= null;
           </select>
        @endif
    @endforeach
-    <button type="submit" class="btn btn-primary my-2">{{$button}}</button>
+    <button type="submit" class="btn btn-primary form-control fs-4 my-2">{{$button}}</button>
 </form>

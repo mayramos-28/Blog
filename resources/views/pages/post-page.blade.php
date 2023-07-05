@@ -2,7 +2,7 @@
 @section('title', 'Home')
 @section('content')
 
-<div>    
+<div class="">    
     @include('component.category-nav-filter-component')
 </div>
 @if ($posts ?? '')

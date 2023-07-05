@@ -25,8 +25,8 @@ class PostFactory extends Factory
             'content' => implode("\n\n", fake()->paragraphs(4)),
             'category_id' => fake()->numberBetween(1, 5),
             'is_published' => true,
-            'image' => $faker->imageUrl(640, 480),
-            'author_name' => $faker->randomElement(['John Doe', 'Jane Smith', 'Roberta Johnson']),
+            'image' => $faker->imageUrl(640, 480),            
+            'author_name' => fake()->name(),            
         ];
     }
     

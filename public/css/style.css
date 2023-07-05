@@ -1,56 +1,114 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body,
 html {
-    width: 100%;
-    height: 100%;
-   
+  width: 100%;
+  height: 100%;
+
 }
 
-h1,a{
-    font-family: 'Roboto', sans-serif;
+h1,
+a {
+  font-family: 'Roboto', sans-serif;
 }
-.nav-font{
-    width: 100%;    
-    display: flex;
-    justify-content: center;
-    gap:1rem;
+
+.nav-font {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-.nav-font a{
-    font-size: 1.5rem;    
+
+.nav-font a {
+  font-size: 1.5rem;
 }
-.header-footer-color{
-    background-color:rgba(0, 0, 0, 0.05);
-    
+
+.header-footer-color {
+  background-color: rgba(0, 0, 0, 0.05);
+  color:black
+
 }
 
 .item-hoover {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;  
-    cursor: pointer;
-    color: white;
-    transition: border-color 0.25s;
-  }
-  
-  .item-hoover:hover {
-    border-color: #646cff;
-  }
-  .nav-font a:hover{
-    color: #646cff;
-  }
-  
-  .item-hoover:focus,
-  .item-hoover:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-  
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+ 
+  transition: border-color 0.25s;
+}
+
+.item-hoover:hover {
+  border-color: #646cff;
+}
+
+.nav-font a:hover {
+  color: #646cff;
+}
+
+.item-hoover:focus,
+.item-hoover:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.category-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.category-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.scale-up {
+  transition: .4s ease-out;
+}
+
+.scale-up:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #646cff;
+}
+
+.scale-up:active {
+  transform: scale(.85);
+}
+
+.form-container {
+
+  padding: 30px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 30px 30px 59px #b5b5b5,
+    -30px -30px 59px #ffffff;
+}
+
+.btn-publish{
+  background-color: #646cff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+input{
+  padding: 20px;
+}

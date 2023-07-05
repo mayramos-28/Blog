@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -13,9 +14,9 @@ class PostController extends Controller
 
         $categoryId = $request->get('category_id');
         if ($categoryId) {
-            $posts = Post::where('category_id', $categoryId)->get();
+            $posts = Post::where('category_id', $categoryId)->paginate(10);
         } else {
-            $posts = Post::all();
+            $posts = Post::paginate(10);
         }
         return view('pages.post-page', ['posts' => $posts]);
     }
@@ -23,7 +24,12 @@ class PostController extends Controller
     public function show(int $id)
     {
         $post = Post::findOrFail($id);
-        return view('pages.post-page', compact('post'));
+
+        // $author = $post->author->name;
+        // $editr = $post->editor->name;  
+
+
+        return view('pages.post-page', ['post' => $post]);
     }
     public function getCreate()
     {
@@ -33,7 +39,7 @@ class PostController extends Controller
             [
                 'type' => 'create',
                 'route' => 'posts.create',
-                'title' => 'Crear Post',
+                'title' => 'Nuevo Post',
                 'button' => 'Crear Post',
                 'form' =>
                 [
@@ -63,7 +69,7 @@ class PostController extends Controller
                         'label' => 'Imagen',
                         'type' => 'text'
                     ],
-                    
+
                 ],
 
 
@@ -123,8 +129,9 @@ class PostController extends Controller
                         'label' => 'Imagen',
                         'type' => 'text'
                     ],
-                    
-                ],]
+
+                ],
+            ]
         );
     }
     public function update(Request $request, int $id)
@@ -139,5 +146,13 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->delete();
         return redirect()->route('posts.index')->with('success', 'El Post ha sido eliminado correctamente');
+    }
+
+    public function count()
+    {
+        $posts = Post::where('is_published', true)->get();
+        $count = count($posts);
+        var_dump($count);
+        return redirect()->route('pages.actions-post-page', ['count' => $count]);
     }
 }
