@@ -1,66 +1,53 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Blog General
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto es un blog básico desarrollado utilizando el framework Laravel y se ha configurado con contenedores Docker para facilitar el desarrollo y la implementación.
 
-## About Laravel
+## Características
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Autenticación de administradores para acceder a las funcionalidades de gestión de posts.
+- Publicación, edición y eliminación de posts.
+- Visualización de todos los posts en la página principal.
+- Diseño responsive para una experiencia óptima en dispositivos móviles.
+- Inicialización con datos de prueba: Este proyecto se configura inicialmente con datos de prueba para facilitar la demostración y el desarrollo. 
+- Credenciales de administrador:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    - Usuario: admin
+    - Contraseña: admin
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  Puedes utilizar estas credenciales para publicar, editar y eliminar posts. Es importante tener en cuenta que, en un entorno de producción real, se deben configurar credenciales adecuadas y seguir        buenas prácticas de seguridad para proteger los datos sensibles.
 
-## Learning Laravel
+Estas credenciales se pueden utilizar para acceder al panel de administración y realizar acciones como crear, editar y eliminar publicaciones.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tecnologías utilizadas
+<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+- HTML
+- CSS
+- PHP
+- [Laravel](https://laravel.com/)
+- [Docker](https://www.docker.com/)
+- [Boostrap](https://getbootstrap.com/)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Requisitos previos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Docker
+- Docker Compose
 
-## Laravel Sponsors
+## Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clona este repositorio en tu máquina local.
+2. En el directorio del proyecto, ejecuta el comando `make start` para construir y levantar los contenedores Docker.
+3. Accede al contenedor de la aplicación ejecutando el comando `make shell`.
+4. Ejecuta `composer install` dentro del contenedor de la aplicación para instalar las dependencias.
+5. Copia el archivo `.env.example` y renómbralo a `.env`. Luego, actualiza las variables de entorno en el archivo `.env` con la configuración de tu base de datos dentro del contenedor (puedes utilizar el servicio de base de datos proporcionado por Docker Compose).
+6. Genera una nueva clave de aplicación ejecutando el comando `php artisan key:generate`.
+7. Ejecuta las migraciones de la base de datos dentro del contenedor de la aplicación con el comando `php artisan migrate`.
+8. El blog estará disponible en `http://localhost:8000`.
 
-### Premium Partners
+## Contacto
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- https://www.linkedin.com/in/mayra-mosquera/
+- mayra28limo@gmail.com
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
