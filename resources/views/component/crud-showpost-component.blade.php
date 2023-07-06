@@ -18,9 +18,15 @@
                     <p class="w-100 text-right">Última actualización {{ date('d F Y', strtotime($post['updated_at']));  }} por <strong> {{$author}} </strong></p> 
                 </div>   --}}
             @auth
-                <div class="py-2">
-                    <a href="{{ route('posts.getUpdate', ['id' => $post['id']]) }}" class="fs-3 close scale-up ">Editar</a>
+                <div class="d-flex gap-3">
+                    <div class="py-2">
+                        <a href="{{ route('posts.getUpdate', ['id' => $post['id']]) }}" class="fs-3 close scale-up ">Editar</a>
+                    </div>
+                    <div class="py-2">
+                        <a href="{{ route('posts.delete', ['id' => $post['id']]) }}" class="fs-3 text-danger scale-up ">Eliminar</a>
+                    </div>
                 </div>
+
 
             @endauth
 

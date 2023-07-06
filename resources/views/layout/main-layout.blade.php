@@ -5,7 +5,7 @@
 
 
         <header class="header-footer-color d-flex  justify-content-around">
-            <h1 class="text-center letter-color align-self-end py-1 ">The Blog</h1>
+            <h1 class="text-center letter-color align-self-end py-1 ">El Blog</h1>
             @include('component.nav-component')
             @auth
                 <div class="d-flex align-self-start ">

@@ -22,8 +22,7 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/', [AuthController::class, 'show'])->name('get-login');
     Route::post('/login', [AuthController::class, 'login'])->name('post-login');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-    
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');    
 })->middleware('auth:sanctum');
 
 Route::group(['prefix' => 'posts'], function () {
@@ -32,8 +31,6 @@ Route::group(['prefix' => 'posts'], function () {
     Route::post('create', [PostController::class, 'create'])->name('posts.create')->middleware('auth:sanctum');
     Route::get('getCreate', [PostController::class, 'getCreate'])->name('posts.getCreate')->middleware('auth:sanctum');
     Route::post('update/{id}', [PostController::class, 'update'])->name('posts.update')->middleware('auth:sanctum');
-    Route::get('getUpdate/{id}', [PostController::class, 'getUpdate'])->name('posts.getUpdate')->middleware('auth:sanctum');
-   
-    Route::get('delete/{id}', [PostController::class, 'delete'])->name('posts.delete')->middleware('auth:sanctum');;
-   
+    Route::get('getUpdate/{id}', [PostController::class, 'getUpdate'])->name('posts.getUpdate')->middleware('auth:sanctum');   
+    Route::get('delete/{id}', [PostController::class, 'delete'])->name('posts.delete')->middleware('auth:sanctum');   
 });

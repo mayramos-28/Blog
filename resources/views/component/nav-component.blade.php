@@ -9,20 +9,12 @@
             <ul class="navbar-nav nav-font link-color ">
                 <li class="nav-item item-hoover">
                     <a class="nav-link link-color  " aria-current="page" href="{{ route('posts.index') }}">Posts</a>
-                </li>   
-                <li class="nav-item item-hoover">
-                    <a class="nav-link link-color  " aria-current="page" href="{{ route('posts.index') }}">Contacto</a>
-                </li>              
-
+                </li>
                 @auth
                     <li class="nav-item item-hoover">
                         <a class="nav-link link-color " href="{{ route('posts.getCreate') }}">Publicar</a>
                     </li>
-
-                  
                 @endauth
-
-
             </ul>
         </div>
     </div>

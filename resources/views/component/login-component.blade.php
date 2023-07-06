@@ -5,7 +5,7 @@
 
             <form method="POST" action="{{ route('post-login') }}" class="form-container">
                 @csrf
-                <legend class="text-center">Iniciar sesion</legend>
+                <legend class="text-center letter-color">Iniciar sesion</legend>
 
                 <div class="form-group py-3 fs-4">
                     <label for="role">Usuario: </label>
@@ -30,8 +30,8 @@
                     @enderror
                 </div>
 
-                <div class="form-group py-2 text-center background">
-                    <button type="submit" class="btn form-control background ">Iniciar sesión</button>
+                <div class="form-group py-2 text-center background rounded ">
+                    <button type="submit" class="btn form-control fs-4">Iniciar sesión</button>
                 </div>
             </form>
         </div>

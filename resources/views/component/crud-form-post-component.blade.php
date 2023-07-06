@@ -33,8 +33,8 @@ $post ??= null;
           </select>
        @endif
    @endforeach
-   <div class="background my-2 ">
-    <button type="submit" class="btn rounded form-control fs-4">{{$button}}</button>
+   <div class="background rounded my-2 ">
+    <button type="submit" class="btn form-control fs-4">{{$button}}</button>
    </div>
     
 </form>

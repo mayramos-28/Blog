@@ -26,15 +26,11 @@ html {
  
 }
 .background{
-  background-color:var(--main-color);
+  background-color:var(--font-color);
 }
 .header-footer-color {
   background-color: var(--main-color-opacity);
   color:black
-}
-
-h1{
-  font-weight: 4rem;
 }
 
 
@@ -138,7 +134,6 @@ h1{
 input{
   padding: 20px;
 }
-
 
 .post-container{
   transition: .4s ease-out;
