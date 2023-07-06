@@ -27,7 +27,7 @@ Route::group(['prefix'=>'admin'], function(){
 
 Route::group(['prefix' => 'posts'], function () {
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
-    Route::get('show/{id}', [PostController::class, 'show'])->name('posts.show');
+    Route::get('show/{slug}', [PostController::class, 'show'])->name('posts.show');
     Route::post('create', [PostController::class, 'create'])->name('posts.create')->middleware('auth:sanctum');
     Route::get('getCreate', [PostController::class, 'getCreate'])->name('posts.getCreate')->middleware('auth:sanctum');
     Route::post('update/{id}', [PostController::class, 'update'])->name('posts.update')->middleware('auth:sanctum');

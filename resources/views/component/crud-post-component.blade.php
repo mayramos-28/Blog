@@ -10,7 +10,7 @@
                         <p class="card-text">{{ Str::limit($post['content'], 100) }}</p>
                         <p class="card-text">Última actualización {{ date('d F Y', strtotime($post['updated_at'])) }}
                         </p>
-                        <a href="{{ route('posts.show', ['id' => $post->id]) }}" class="card-link close scale-up ">Ver
+                        <a href="{{ route('posts.show', ['slug' => $post->slug]) }}" class="card-link close scale-up ">Ver
                             más</a>
                     </div>
                 </div>

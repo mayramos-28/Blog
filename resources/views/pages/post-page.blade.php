@@ -12,13 +12,7 @@
         </div>
     @endif
 
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                $('#success-alert').alert('close');
-            }, 5000); // Ocultar después de 5 segundos (5000 milisegundos)
-        });
-    </script>
+
 
 
     @if ($posts ?? '')

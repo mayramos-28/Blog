@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -21,9 +20,9 @@ class PostController extends Controller
         return view('pages.post-page', ['posts' => $posts]);
     }
 
-    public function show(int $id)
+    public function show(string $slug)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::where(['slug' => $slug])->first();
         return view('pages.post-page', ['post' => $post]);
     }
 

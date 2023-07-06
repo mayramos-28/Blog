@@ -27,11 +27,12 @@ class AuthController extends Controller
                     return redirect()->route('posts.index');
                 } else {
                     $message = 'Contraseña incorrecta';
-                    return view('pages.admin')->with('message', $message);
+                    return  redirect()->route('get-login')->with('message', $message);
+                   
                 }
             } else {
                 $message = 'Usuario no encontrado';
-                return view('pages.admin')->with('message', $message);
+                return  redirect()->route('get-login')->with('message', $message);
             }
         
 

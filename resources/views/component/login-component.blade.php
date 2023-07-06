@@ -9,31 +9,32 @@
 
                 <div class="form-group py-3 fs-4">
                     <label for="role">Usuario: </label>
-                    <input id="role" type="text" class="form-control py-3 @error('role') is-invalid @enderror"
-                        name="role" value="{{ old('role') }}" required autofocus>
-                    @error('role')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input id="role" type="text" class="form-control py-3 " name="role"
+                        value="{{ old('role') }}" required autofocus>
+
                 </div>
 
                 <div class="form-group py-3 fs-4">
                     <label for="password">Contraseña:</label>
-                    <input id="password" type="password"
-                        class="form-control py-3 @error('password') is-invalid @enderror" name="password" required
+                    <input id="password" type="password" class="form-control py-3" name="password" required
                         autocomplete="current-password">
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+
                 </div>
 
                 <div class="form-group py-2 text-center background rounded ">
                     <button type="submit" class="btn form-control fs-4">Iniciar sesión</button>
                 </div>
+
+                @if (session('message'))
+                    <div class="alert text-danger text-center fs-4 show py-2" role="alert" id="danger-alert">
+                        <strong>{{ session('message') }}</strong>
+                    </div>
+                @endif
+                
             </form>
         </div>
+
+
+
     </div>
 </div>
