@@ -6,18 +6,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse  w-100" id="navbarNav">
-            <ul class="navbar-nav nav-font">
+            <ul class="navbar-nav nav-font link-color ">
                 <li class="nav-item item-hoover">
-                    <a class="nav-link " aria-current="page" href="{{ route('posts.index') }}">Posts</a>
-                </li>
-
+                    <a class="nav-link link-color  " aria-current="page" href="{{ route('posts.index') }}">Posts</a>
+                </li>   
                 <li class="nav-item item-hoover">
-                    <a class="nav-link " href="#">Contacto</a>
-                </li>
+                    <a class="nav-link link-color  " aria-current="page" href="{{ route('posts.index') }}">Contacto</a>
+                </li>              
 
                 @auth
                     <li class="nav-item item-hoover">
-                        <a class="nav-link" href="{{ route('posts.getCreate') }}">Publicar</a>
+                        <a class="nav-link link-color " href="{{ route('posts.getCreate') }}">Publicar</a>
                     </li>
 
                   

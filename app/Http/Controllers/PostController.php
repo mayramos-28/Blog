@@ -14,7 +14,7 @@ class PostController extends Controller
 
         $categoryId = $request->get('category_id');
         if ($categoryId) {
-            $posts = Post::where('category_id', $categoryId)->paginate(10);
+            $posts = Post::where('category_id', $categoryId)->orderBy('created_at', 'desc')->paginate(10);
         } else {
             $posts = Post::paginate(10);
         }
@@ -24,20 +24,27 @@ class PostController extends Controller
     public function show(int $id)
     {
         $post = Post::findOrFail($id);
-
-        // $author = $post->author->name;
-        // $editr = $post->editor->name;  
-
-
         return view('pages.post-page', ['post' => $post]);
     }
+
+    private function countPosts($value): bool
+    {
+        $post = new Post();
+        $count = $post::where('is_published', $value)->get();
+        $postsPending = count($count);
+        return $postsPending;
+    }
+
     public function getCreate()
     {
+
+        $postsPending = $this->countPosts(false);
 
         return view(
             'pages.actions-post-page',
             [
                 'type' => 'create',
+                'postsPending' => $postsPending,
                 'route' => 'posts.create',
                 'title' => 'Nuevo Post',
                 'button' => 'Crear Post',
@@ -88,6 +95,8 @@ class PostController extends Controller
         $post->author_name = $request->get('author_name');
         $post->image = $request->get('image');
         $post->save();
+
+
         return view('pages.post-page', ['post' => $post])->with('success', 'El Post ha sido creado correctamente');
     }
     public function getUpdate(int $id)
@@ -146,13 +155,5 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->delete();
         return redirect()->route('posts.index')->with('success', 'El Post ha sido eliminado correctamente');
-    }
-
-    public function count()
-    {
-        $posts = Post::where('is_published', true)->get();
-        $count = count($posts);
-        var_dump($count);
-        return redirect()->route('pages.actions-post-page', ['count' => $count]);
     }
 }

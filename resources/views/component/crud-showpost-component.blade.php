@@ -19,7 +19,7 @@
                 </div>   --}}
             @auth
                 <div class="py-2">
-                    <a href="{{ route('posts.getUpdate', ['id' => $post['id']]) }}" class="fs-3">editar</a>
+                    <a href="{{ route('posts.getUpdate', ['id' => $post['id']]) }}" class="fs-3 close scale-up ">Editar</a>
                 </div>
 
             @endauth

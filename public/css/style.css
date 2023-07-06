@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
 
+:root {
+  --main-color: rgb(109, 180, 167);
+  --font-color:rgb(0, 170, 161);
+  --links-color:rgb(3, 92, 87);
+  --main-color-opacity:rgb(232, 243, 243);
+
+}
+
+
 * {
   padding: 0;
   margin: 0;
@@ -9,13 +18,25 @@ body,
 html {
   width: 100%;
   height: 100%;
-
-}
-
-h1,
-a {
   font-family: 'Roboto', sans-serif;
 }
+
+.letter-color{
+  color:var(--font-color);
+ 
+}
+.background{
+  background-color:var(--main-color);
+}
+.header-footer-color {
+  background-color: var(--main-color-opacity);
+  color:black
+}
+
+h1{
+  font-weight: 4rem;
+}
+
 
 .nav-font {
   width: 100%;
@@ -24,34 +45,35 @@ a {
   gap: 1rem;
 }
 
-.nav-font a {
+.link-color {
+  color: var(--links-color);
   font-size: 1.5rem;
 }
 
-.header-footer-color {
-  background-color: rgba(0, 0, 0, 0.05);
-  color:black
-
+.close{
+  color: var(--links-color);  
+  cursor: pointer;
+  font-size: 1rem;
 }
+
 
 .item-hoover {
   border-radius: 8px;
   border: 1px solid transparent;
-
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  cursor: pointer;
- 
+  cursor: pointer; 
   transition: border-color 0.25s;
 }
 
 .item-hoover:hover {
   border-color: #646cff;
+  background-color: var(--font-color);
 }
 
 .nav-font a:hover {
-  color: #646cff;
+  color: #074d4e;
 }
 
 .item-hoover:focus,
@@ -65,13 +87,14 @@ a {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
   padding: 1rem;
 }
 
 .category-container a {
   text-decoration: none;
   color: black;
+  
 }
 
 .scale-up {
@@ -81,7 +104,7 @@ a {
 .scale-up:hover {
   cursor: pointer;
   transform: scale(1.1);
-  color: #646cff;
+  color:var(--font-color);
 }
 
 .scale-up:active {
@@ -98,17 +121,30 @@ a {
 }
 
 .btn-publish{
-  background-color: #646cff;
+  background-color:var(--font-color);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: .4s ease-out;
+}
+.btn-publish:hover{
+  transform: scale(1.1);
 }
 input{
   padding: 20px;
+}
+
+
+.post-container{
+  transition: .4s ease-out;
+}
+.post-container:hover{  
+  background: #ffffff;
+  box-shadow: 30px 30px 59px #b5b5b5,
+    -30px -30px 59px #ffffff;
 }

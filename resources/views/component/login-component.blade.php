@@ -30,8 +30,8 @@
                     @enderror
                 </div>
 
-                <div class="form-group py-3 text-center">
-                    <button type="submit" class="btn btn-primary form-control py-3">Iniciar sesión</button>
+                <div class="form-group py-2 text-center background">
+                    <button type="submit" class="btn form-control background ">Iniciar sesión</button>
                 </div>
             </form>
         </div>
