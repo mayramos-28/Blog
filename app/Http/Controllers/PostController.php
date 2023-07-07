@@ -51,6 +51,7 @@ class PostController extends Controller
                 'postsPending' => $postsPending,
                 'route' => 'posts.create',
                 'title' => 'Nuevo Post',
+            
                 'button' => 'Crear Post',
                 'categories' => Category::all(),
                 'form' =>

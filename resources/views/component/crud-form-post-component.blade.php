@@ -1,5 +1,5 @@
 <?php
-$post ?? null;
+$post ??= null;
 ?>    
 
 <form action="{{ route($route, ['id'=> $post->id ?? ''])}}" method="POST" enctype="multipart/form-data" class="fs-5 ">
