@@ -2,6 +2,11 @@
 
 Este proyecto es un blog básico desarrollado utilizando el framework Laravel y se ha configurado con contenedores Docker para facilitar el desarrollo y la implementación.
 
+# Despliegue
+El proyecto se ha desplegado usando Railway, una plataforma de despliegue en la que se puede importar proyectos o desarrollar con ella localmente y luego desplegarla en la nube.
+    - EN el siguiente link puede echarse un vistazo al blog:
+        https://wiber-pt-production.up.railway.app/posts
+
 ## Características
 
 - Autenticación de administradores para acceder a las funcionalidades de gestión de posts.
