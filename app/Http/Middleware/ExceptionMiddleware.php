@@ -16,8 +16,10 @@ class ExceptionMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         try {
+          
             return $next($request);
         } catch (\Throwable $e) {
+            
             return response()->json(
                 [
                     'status' => 'error',

@@ -1,8 +1,15 @@
 <?php
-$post ?? = null;
+$post ?? null;
 ?>    
 
 <form action="{{ route($route, ['id'=> $post->id ?? ''])}}" method="POST" enctype="multipart/form-data" class="fs-5 ">
+
+    @if (session('message'))
+        <div class="alert text-danger text-center fs-4 show py-2" role="alert" id="danger-alert">
+            <strong>{{ session('message') }}</strong>
+        </div>
+    @endif
+
     @csrf
    <legend class="py-2 letter-color">{{$title}}</legend>
    
@@ -27,7 +34,7 @@ $post ?? = null;
          <div class="form-group">
           <label for="category">{{$input['label']}}</label>
           <select class="form-control" id="category" name="{{$input['field']}}" required>
-                <option  >Selecciona una categoría</option>
+                <option disabled >Selecciona una categoría</option>
                 @foreach($categories as $category)
                  <option value="{{ $category->id }}" {{($category->id === $post?->{$input['field']} ?? '') ? 'selected' : '' }}>{{ $category->name }}</option>
                 @endforeach
