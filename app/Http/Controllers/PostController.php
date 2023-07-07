@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -17,7 +18,11 @@ class PostController extends Controller
         } else {
             $posts = Post::paginate(10);
         }
-        return view('pages.post-page', ['posts' => $posts]);
+
+        return view('pages.post-page', [
+            'posts' => $posts, 
+            'categories' => Category::all()
+        ]);
     }
 
     public function show(string $slug)
@@ -47,6 +52,7 @@ class PostController extends Controller
                 'route' => 'posts.create',
                 'title' => 'Nuevo Post',
                 'button' => 'Crear Post',
+                'categories' => Category::all(),
                 'form' =>
                 [
                     [
@@ -109,6 +115,7 @@ class PostController extends Controller
                 'post' => $post,
                 'title' => 'Editar Post',
                 'button' => 'Editar Post',
+                'categories' => Category::all(),
                 'form' =>
                 [
                     [

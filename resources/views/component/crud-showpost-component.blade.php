@@ -1,4 +1,4 @@
-<div class="row post-content w-100">
+<div class="row post-content w-100 py-5">
     <div class="col-12 col-md-7">
         <img src="{{ $post['image'] }}" class="card-img-top" alt="...">
     </div>
