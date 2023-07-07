@@ -13,8 +13,6 @@
     @endif
 
 
-
-
     @if ($posts ?? '')
         <div>
             @include('component.crud-post-component')

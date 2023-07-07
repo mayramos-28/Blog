@@ -1,6 +1,7 @@
 <?php
-$post ??= null;
-?>
+$post ?? = null;
+?>    
+
 <form action="{{ route($route, ['id'=> $post->id ?? ''])}}" method="POST" enctype="multipart/form-data" class="fs-5 ">
     @csrf
    <legend class="py-2 letter-color">{{$title}}</legend>
